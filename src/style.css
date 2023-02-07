@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+a:hover {
+    color: grey;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 50px auto;
+}
+
+/* Header styles */
+header {
+    position: relative;
+}
+
+header .logo {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+header .presentation {
+    margin: 50px 0;
+    background: url(./media/main-background.jpeg) no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #bcbcbc;
+    width: 100%;
+    height: 500px;
+}
+
+header .presentation::after {
+    content: "Welcome to our shop!";
+    position: absolute;
+    color: white;
+    top: 150px;
+    left: 100px;
+    width: 400px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+header .presentation::before {
+    content: "Some snack, bro?";
+    position: absolute;
+    color: white;
+    top: 275px;
+    left: 105px;
+    width: 400px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+header ul.navbar {
+    float: right;
+    list-style: none;
+}
+
+header ul.navbar li {
+    display: inline;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+header ul.navbar li:hover {
+    opacity: 0.9;
+}
+
+header .cart {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0 20px;
+    transition: 1s;
+}
+
+header .cart:hover,
+header .cart.active {
+    color: #225d22;
+    transform: scale(1.25);
+}
+
+header .cart-content {
+    position: absolute;
+    top: 40px;
+    right: 150px;
+    padding: 20px;
+    padding-bottom: 0;
+    width: 370px;
+    background: rgb(221, 221, 221);
+
+    box-shadow: 5px 4px 11px 0px rgba(34, 60, 80, 0.2);
+    z-index: 1; /* to make it on top of all */
+}
+
+header .cart-content .cart-item {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+header .cart-content .cart-item img {
+    width: 100px;
+    margin-right: 10px;
+    
+}
+
+header .cart-content .cart-item h1 {
+    font-size: 20px;
+    width: 225px;
+    margin: 0 20px 0 0;
+}
+
+header .cart-content .cart-item p {
+    position: absolute;
+    margin: 30px 0 0 110px;
+    text-decoration: underline;
+}
+
+header .cart-content .cart-empty h1 {
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+header .cart-content .cart-item .remove {
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-left: 350px;
+    width: 20px;
+    height: 20px;
+    transition: 1s;
+}
+
+header .cart-content .cart-item .remove:hover {
+    transform: scale(1.25);
+}
+
+header .cart-content .sum {
+    float: right;
+    position: absolute;
+    margin: 10px;
+    font-weight: bold;
+    bottom: 10px;
+    left: 250px;
+    background-color: rgb(66, 66, 66);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.container .categories p {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #dad9d9;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+    text-transform: capitalize;
+    
+    border: 1px solid transparent;
+    transition: 1s;
+}
+
+.container .categories p:hover {
+    transform: scale(1.05);
+    border-color: silver;
+}
+
+
+/* Main styles */
+main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+main .item {
+    width: 30%;
+    margin-bottom: 50px;
+    background: rgb(221, 221, 221);
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+main .item img, .item-page img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transition: transform 1s ease;
+    cursor: pointer;
+}
+
+main .item img:hover {
+    transform: scale(1.025);
+}
+
+main p, h1, .item-page b, .item-page h1  {
+    margin: 12px 20px;
+    color: #333;
+}
+
+.item-page .item-modal h1 {
+    margin: 5px;
+}
+
+.item-page .item-modal p {
+    padding: 5px;
+}
+
+.item-page .item-modal .price {
+    padding: 5px;
+    font-weight: bold;
+}
+
+main .add-to-cart {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    background: rgb(65, 39, 78);
+    width: 30px;
+    height: 30px;
+
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    color: white;
+
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+main .add-to-cart:hover { 
+    background-color: #225d22;
+    transform: scale(1.2);
+}
+
+.item-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    overflow: auto;
+}
+
+.item-page .item-modal {
+    width: 400px;
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+}
+
+.item-page .item-modal .add-to-cart {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    background: rgb(65, 39, 78);
+    width: 125px;
+    height: 30px;
+
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    color: white;
+
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+.item-page .item-modal .add-to-cart:hover { 
+    background-color: #225d22;
+    transform: scale(1.1);
+}
+
+
+
+/* Footer Styles */
+footer {
+    background: black;
+    height: auto;
+    width: 100%;
+    padding-top: 40px;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3{
+    line-height: 48px;
+}
+
+.footer-content p {
+    max-width: 600px;
+    margin: 10px auto;
+    line-height: 2rem;
+    font-size: 14px;
+}
+
+.social-networks {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.social-networks li {
+    margin: 0 10px;
+}
+
+.social-networks a {
+    color: white;
+    text-decoration: overline;
+}
+
+.telegram:hover {
+    color: #229ED9;
+    transition: 1s;
+}
+
+.telegram:not(:hover) {
+    color: white;
+    transition: 1s;
+}
+
+.facebook:hover {
+    color: #3b5998;
+    transition: 1s;
+}
+
+.facebook:not(:hover) {
+    color: white;
+    transition: 1s;
+}
+
+.google:hover {
+    color: #fbbc05;
+    transition: 1s;
+}
+
+.google:not(:hover) {
+    color: white;
+    transition: 1s;
+}
+
+.youtube:hover {
+    color: #c4302b;
+    transition: 1s;
+}
+
+.youtube:not(:hover) {
+    color: white;
+    transition: 1s;
+}
+
+
+
+.footer-bottom {
+    text-align: center;
+    line-height: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-bottom span {
+    font-weight: bold;
+    color: #868686;
+}
+
+.arrow {
+    position: relative;
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.arrow:hover {
+    box-shadow: 0 0 1rem 0 rgba(255, 255, 255, 0.5);
+}
+
+.arrow div {
+    position: absolute;
+    height: 25%;
+    width: 25%;
+
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+
+    transform: rotate(45deg);
+    left: 34%;
+    top: 40%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+mark {
+    color: #00ff00;
+    background: none;
+}
