@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/snack-store/static/css/main.e68b0cdc.css",
+    "main.js": "/snack-store/static/js/main.df30e4a3.js",
+    "static/media/main-background.jpeg": "/snack-store/static/media/main-background.fdea5c911a580378b2ff.jpeg",
+    "index.html": "/snack-store/index.html",
+    "main.e68b0cdc.css.map": "/snack-store/static/css/main.e68b0cdc.css.map",
+    "main.df30e4a3.js.map": "/snack-store/static/js/main.df30e4a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e68b0cdc.css",
+    "static/js/main.df30e4a3.js"
+  ]
+}
