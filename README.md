@@ -1,1 +1,1 @@
-URL: https://srmbackisdeveloper.github.io/snack-store/
+# URL: https://srmbackisdeveloper.github.io/snack-store/
